@@ -141,10 +141,12 @@ async function loadState(){
   }
 
   // 4) sin datos previos -> sembramos el mes de ejemplo
+  //    (SOLO en este navegador: no escribimos en la nube datos de relleno,
+  //     para que el primer dispositivo con datos reales sea la fuente de verdad)
   STATE.marcas = [defaultExampleMonth()];
+  localStorageSave(STATE);
   setStorageStatus(isCloudActive() ? "Sin datos todavía · listo para sincronizar"
                                        : "Guardado solo en este navegador (configura la nube para sincronizar)");
-  await saveState();
 }
 
 async function saveState(){
