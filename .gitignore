@@ -1,0 +1,5 @@
+# Contiene la connection string secreta de Neon: NUNCA se sube
+config.js
+
+# Capturas generadas para verificar cambios
+preview_*.png
